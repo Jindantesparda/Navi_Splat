@@ -1,67 +1,92 @@
-The Core Concept
+# Navi_Splat
 
-I'm building a 3D spatial exploration platform using Gaussian Splatting technology that lets people virtually explore real-world locations before visiting them physically. I coined the term "spatial anxiety" that discomfort we all feel navigating unfamiliar spaces—as the core problem I'm solving.
-My Technology Stack
+[![Github Release](https://img.shields.io/github/v/release/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/releases)
+[![License](https://img.shields.io/github/license/playcanvas/supersplat)](https://github.com/playcanvas/supersplat/blob/main/LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white&color=black)](https://discord.gg/RSaMRzg)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=flat&logo=reddit&logoColor=white&color=black)](https://www.reddit.com/r/PlayCanvas)
+[![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white&color=black)](https://x.com/intent/follow?screen_name=playcanvas)
 
-Component	My Approach
+| [SuperSplat Editor](https://superspl.at/editor) | [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/) | [Blog](https://blog.playcanvas.com) | [Forum](https://forum.playcanvas.com) |
 
-Capture	Users can scan spaces with their phones (using Scanniverse/Polycam) or upload videos directly
-Training	I train everything locally on my R9 5900HX + RTX 3060 6GB laptop using open-source tools
-Viewing	A web-based viewer (currently exploring SuperSplat/Reall3dViewer) that runs in any browser
-Future	Adding annotations, route planning, and measurement tools for practical navigation
-My Current Workflow
+Navi_Splat is a 3D spatial exploration platform for inspecting, annotating, and navigating Gaussian Splats so users can explore real-world locations before visiting physically.
 
-    I capture videos or photos of locations
+A live version of this tool is available at: https://superspl.at/editor
 
-    I train Gaussian splats locally on my laptop during my commute
+![image](https://github.com/user-attachments/assets/b6cbb5cc-d3cc-4385-8c71-ab2807fd4fba)
 
-    I upload them to a web viewer for testing
+To learn more about using SuperSplat, please refer to the [User Guide](https://developer.playcanvas.com/user-manual/gaussian-splatting/editing/supersplat/).
 
-    Eventually: Users will upload their own captures for me to train and add to the platform
+## Local Development
 
-The Use Cases I'm Targeting
-User	Problem	My Solution
-Travelers	Can't trust Airbnb photos	Virtually walk through the entire property before booking
-People with accessibility needs	Unknown if spaces are navigable	Check ramps, door widths, and elevator access remotely
-Facility managers	Locating specific items or outlets	Find exact locations in complex buildings instantly
-Anyone	Anxiety about unfamiliar places	Explore and memorize visual cues before arriving
-What Makes Navi-Splat Different
+To initialize a local development environment for SuperSplat, ensure you have [Node.js](https://nodejs.org/) 18 or later installed. Follow these steps:
 
-Unlike Google Street View (fixed paths) or Matterport (expensive specialized hardware), I'm building something that is:
+1. Clone the repository:
 
-    Democratized: Anyone with a smartphone can contribute scans
+   ```sh
+   git clone https://github.com/playcanvas/supersplat.git
+   cd supersplat
+   ```
 
-    Fluid: Video game-like navigation, not clunky jump cuts between points
+2. Install dependencies:
 
-    Realistic: Photographic detail through Gaussian Splatting technology
+   ```sh
+   npm install
+   ```
 
-    Practical: Focused on journey planning and spatial familiarization
+3. Build SuperSplat and start a local web server:
 
-Where I Am Now
+   ```sh
+   npm run develop
+   ```
 
-    ✅ Successfully training splats on my laptop
+4. Open a web browser tab and make sure network caching is disabled on the network tab and the other application caches are clear:
 
-    ✅ Viewing them locally in web browsers
+   - On Safari you can use `Cmd+Option+e` or Develop->Empty Caches.
+   - On Chrome ensure the options "Update on reload" and "Bypass for network" are enabled in the Application->Service workers tab:
 
-    ✅ Building the technical foundation
+   <img width="846" alt="Screenshot 2025-04-25 at 16 53 37" src="https://github.com/user-attachments/assets/888bac6c-25c1-4813-b5b6-4beecf437ac9" />
 
-    🔄 Working toward a standalone web application
+5. Navigate to `http://localhost:3000`
 
-    🎯 Exploring telecom applications (site surveys, remote infrastructure inspection)
+When changes to the source are detected, SuperSplat is rebuilt automatically. Simply refresh your browser to see your changes.
 
-The Bigger Vision
+## Localizing the SuperSplat Editor
 
-I'm essentially building a user-generated 3D map of indoor spaces—a "Google Maps for interiors"—where anyone can upload scans, and anyone can virtually explore buildings before setting foot inside. The telecom angle adds professional applications like remote site surveys and infrastructure inspection, which aligns with my current work.
-Questions I'm Still Exploring
+The currently supported languages are available here:
 
-As I build this out, I'm thinking through:
+https://github.com/playcanvas/supersplat/tree/main/static/locales
 
-    Should users create accounts to save favorite routes and spaces?
+### Adding a New Language
 
-    How do I integrate the telecom applications—as a separate product or part of Navi-Splat?
+1. Add a new `<locale>.json` file in the `static/locales` directory.
 
-    What's the right timeline for opening uploads to other users?
+2. Add the locale to the list here:
 
-    How do I handle privacy concerns when scanning spaces?
+   https://github.com/playcanvas/supersplat/blob/main/src/ui/localization.ts
 
-This is what I'm building. If you have thoughts on any of these questions, I'd love to hear them.
+### Testing Translations
+
+To test your translations:
+
+1. Run the development server:
+
+   ```sh
+   npm run develop
+   ```
+
+2. Open your browser and navigate to:
+
+   ```
+   http://localhost:3000/?lng=<locale>
+   ```
+
+   Replace `<locale>` with your language code (e.g., `fr`, `de`, `es`).
+
+## Contributors
+
+SuperSplat is made possible by our amazing open source community:
+
+<a href="https://github.com/playcanvas/supersplat/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=playcanvas/supersplat" />
+</a>
+

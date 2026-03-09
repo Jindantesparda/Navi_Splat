@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navi_Splat</title>
+        <meta charset="utf-8" />
+        <base href="__BASE_HREF__">
+        <link rel="manifest" href="./manifest.json">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="shortcut icon" href="#">
+        <meta name="description" content="Navi_Splat is a 3D spatial exploration platform for exploring real-world places with Gaussian Splatting before visiting physically." />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+        <!-- Service worker -->
+        <script>
+            const sw = navigator.serviceWorker;
+            if (sw) {
+                sw.register('./sw.js')
+                    .then(reg => console.log('service worker registered', reg))
+                    .catch(err => console.log('failed to register service worker', err));
+            }
+        </script>
+    </head>
+
+    <body>
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>
+

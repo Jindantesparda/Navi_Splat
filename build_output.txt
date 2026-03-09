@@ -1,0 +1,22 @@
+
+> navi_splat@2.23.2 build
+> rollup -c
+
+[34m[34mBuilding Navi_Splat
+[34mtype [1mrelease[22m[0m
+
+[36m
+[1msrc/index.ts[22m → [1mdist[22m...[39m
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+[1m[33m(!) Circular dependencies[39m[22m
+node_modules/mediabunny/dist/modules/src/input.js -> node_modules/mediabunny/dist/modules/src/input-format.js -> node_modules/mediabunny/dist/modules/src/isobmff/isobmff-demuxer.js -> node_modules/mediabunny/dist/modules/src/input-track.js -> node_modules/mediabunny/dist/modules/src/media-sink.js -> node_modules/mediabunny/dist/modules/src/input.js
+node_modules/mediabunny/dist/modules/src/input-track.js -> node_modules/mediabunny/dist/modules/src/media-sink.js -> node_modules/mediabunny/dist/modules/src/input-track.js
+node_modules/mediabunny/dist/modules/src/reader.js -> node_modules/mediabunny/dist/modules/src/input.js -> node_modules/mediabunny/dist/modules/src/input-format.js -> node_modules/mediabunny/dist/modules/src/isobmff/isobmff-demuxer.js -> node_modules/mediabunny/dist/modules/src/isobmff/isobmff-reader.js -> node_modules/mediabunny/dist/modules/src/reader.js
+...and 24 more
+[32mcreated [1mdist[22m in [1m25s[22m[39m
+[36m
+[1msrc/sw.ts[22m → [1mdist[22m...[39m
+[32mcreated [1mdist[22m in [1m3s[22m[39m

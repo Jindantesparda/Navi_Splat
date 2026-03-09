@@ -1,0 +1,128 @@
+@use 'colors.scss' as *;
+
+#navigation-annotations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#navigation-annotations-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#navigation-marker-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#navigation-control-panel {
+    position: absolute;
+    left: 24px;
+    top: 84px;
+    width: 280px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(17, 17, 17, 0.65);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: $text-primary;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: auto;
+    z-index: 30;
+}
+
+.navigation-title {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.navigation-subtitle {
+    margin-top: 4px;
+    color: $text-secondary;
+}
+
+.navigation-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+
+    label {
+        width: 30px;
+        color: $text-secondary;
+    }
+
+    select {
+        flex: 1;
+        background: $bcg-dark;
+        color: $text-primary;
+        border: 1px solid $bcg-light;
+        border-radius: 4px;
+        padding: 4px;
+    }
+}
+
+.navigation-mode,
+.navigation-action {
+    border: 1px solid $bcg-light;
+    background: $bcg-dark;
+    color: $text-primary;
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.navigation-mode.active {
+    border-color: $clr-hilight;
+    color: $clr-hilight;
+}
+
+#navigation-info-bubble {
+    position: absolute;
+    max-width: 260px;
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    padding: 8px;
+    pointer-events: none;
+
+    strong {
+        font-size: 12px;
+    }
+
+    p {
+        margin: 6px 0 0;
+        line-height: 1.3;
+        color: $text-secondary;
+    }
+}
+
+.navigation-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    border: 1px solid $bcg-light;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 26px;
+    line-height: 14px;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 30;
+}
+
+.navigation-point.active {
+    border-color: $clr-hilight;
+    color: $clr-hilight;
+}
